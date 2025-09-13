@@ -11,9 +11,8 @@
  * Category: common
  */
 
-var module = module ? module : {}; // shim for browser use
-
-function hljsDefineGN(hljs) {
+/** @type LanguageFn */
+export default function(hljs) {
   var SUBST = {
     className: 'subst', relevance: 2,
     variants: [
@@ -95,9 +94,3 @@ function hljsDefineGN(hljs) {
     ]
   };
 }
-
-module.exports = function(hljs) {
-  hljs.registerLanguage('GN', hljsDefineGN);
-};
-
-module.exports.definer = hljsDefineGN;
